@@ -2,7 +2,7 @@
   <h1>Beers</h1>
   {{#each this.beer}}
     <img src='{{this.image_url}}' alt='' />
-    <p>{{this.name}}</p>
+    <a href="/beers/beer-{{this.id}}">{{this.name}}</a>
     <p>{{this.description}}</p>
     <p>{{this.tagline}}</p>
   {{/each}}
