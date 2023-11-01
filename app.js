@@ -36,15 +36,13 @@ app.get('/beers', async (req, res) => {
 
 app.get('/random-beer', async (req, res) => {
   let randomBeer = await punkAPI.getRandom();
-  console.log(randomBeer);
   res.render('randomBeers.hbs', { randomBeer: randomBeer });
 });
 
 app.get('/beers/:beerId', async (req, res) => {
   try {
-    let id = req.params.beerId.substring(req.params.beerId.indexOf('-'));
-    console.log(id);
-    let oneBeer = await punkAPI.getBeer(req.params.beerId);
+    let id = req.params.beerId.substring(req.params.beerId.indexOf('-') + 1);
+    let oneBeer = await punkAPI.getBeer(id);
     res.render('detailedBeer.hbs', {
       oneBeer
     });

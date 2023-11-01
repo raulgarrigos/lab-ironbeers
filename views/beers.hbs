@@ -1,8 +1,9 @@
 <div>
   <h1>Beers</h1>
   {{#each this.beer}}
-    <img src='{{this.image_url}}' alt='' />
-    <a href="/beers/beer-{{this.id}}">{{this.name}}</a>
+    <p><strong>{{this.name}}</strong></p>
+    <a href='/beers/beer-{{this.id}}'>
+      <img src='{{this.image_url}}' alt='' /></a>
     <p>{{this.description}}</p>
     <p>{{this.tagline}}</p>
   {{/each}}
