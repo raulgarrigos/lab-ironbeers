@@ -1,10 +1,13 @@
 <div>
   <h1>Beers</h1>
   {{#each this.beer}}
+  <div class="beer">
     <p><strong>{{this.name}}</strong></p>
     <a href='/beers/beer-{{this.id}}'>
       <img src='{{this.image_url}}' alt='' /></a>
-    <p>{{this.description}}</p>
     <p>{{this.tagline}}</p>
+    <p>{{this.description}}</p>
+  </div>
   {{/each}}
 </div>
+{{> footerPartial}}
